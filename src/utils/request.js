@@ -58,6 +58,16 @@ service.interceptors.response.use((res)=>{
     return service(options)
  }
 
-
+// 使用request对象请求
+['get','post','put','patch'].forEach((item)=>{
+    request[item] = (url,data,options)=>{
+        return request({
+            url,
+            data,
+            method:item,
+            ...options
+        })
+    }
+})
 
  export default request;
