@@ -4,12 +4,9 @@
 <script >
 export default{
   "name":"App",
-  mounted(){
-    this.$storage.setItem("name","jack")
-    this.$storage.clearItem("name")
-    this.$storage.clearAll()
-  }
 }
 </script>
-<style >
+<style lang="scss">
+@import './assets/style/common.scss';
+@import './assets/style/reset.css';
 </style>
