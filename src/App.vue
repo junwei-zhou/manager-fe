@@ -5,7 +5,13 @@
 </template>
 <script >
 export default{
-  "name":"App"
+  "name":"App",
+  mounted(){
+    this.$storage.setItem("name","jack")
+    this.$storage.clearItem("name")
+    this.$storage.clearAll()
+
+  }
 }
 </script>
 <style >
