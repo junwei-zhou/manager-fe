@@ -1,5 +1,3 @@
-
-
 <template>
   <router-view></router-view>
 </template>
@@ -10,7 +8,6 @@ export default{
     this.$storage.setItem("name","jack")
     this.$storage.clearItem("name")
     this.$storage.clearAll()
-
   }
 }
 </script>
