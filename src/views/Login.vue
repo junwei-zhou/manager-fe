@@ -5,11 +5,11 @@
         <div class="title">后台管理系统</div>
         <el-form-item prop="userName" class="prefix-icon">
           <span class="icon iconfont">&#xe7ae;</span>
-          <input type="text" v-model="user.userName" />
+          <el-input type="text" v-model="user.userName" prefix-icon="User" placeholder="请输入用户名"/>
         </el-form-item>
-        <el-form-item prop="userPwd" class="prefix-icon">
+        <el-form-item prop="userPwd" class="prefix-icon" >
           <span class="icon iconfont">&#xe763;</span>
-          <input type="password" v-model="user.userPwd" />
+          <el-input type="password" v-model="user.userPwd" prefix-icon="View" placeholder="请输入密码"/>
         </el-form-item>
         <el-form-item>
           <el-button type="primary" class="btn-login" @click="login"

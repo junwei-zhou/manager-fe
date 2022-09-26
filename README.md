@@ -9,5 +9,6 @@ npm run dev
 ```
 yarn add vue-router@next vuex@next element-plus axios -S
 yarn add sass -D
+npm install @element-plus/icons 
 ```
 
