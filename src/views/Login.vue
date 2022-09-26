@@ -53,7 +53,7 @@
         this.$refs.userForm.validate((valid) => {
           if (valid) {
             this.$request
-              .post("/users/login", this.user, { mock: true })
+              .post("/users/login", this.user, { mock: false })
               .then((res) => {
                 this.$store.commit("saveUserInfo",res)
                 this.$router.push("/welcome")
@@ -74,6 +74,7 @@
     justify-content: center;
     align-items: center;
     background-color: #f9fcff;
+    background-image: url("./../assets/images/login.jpg");
     width: 100vw;
     height: 100vh;
   }

@@ -11,7 +11,7 @@ const NETWORK_ERROR = '网络异常'
 
 
 const service = axios.create({
-    baseURL:config.baseURL,
+    baseURL:config.baseApi,
     timeout:8000
 })
 
@@ -29,7 +29,7 @@ service.interceptors.response.use((res)=>{
 
     if(code===200){
         return data;
-    }else if(code ===40001){
+    }else if(code ===50001){
         ElMessage.error(TOKEN_INVALID)
         setTimeout(()=>{
             router.push("/login")
@@ -50,10 +50,13 @@ service.interceptors.response.use((res)=>{
     if(options.method.toLowerCase()==='get'){
         options.params = options.data;
     }
+    if(typeof options.mock != 'undefined'){
+        config.mock = options.mock;
+    }
     if(config.env==='prod'){
-        service.defaults.baseURL = config.baseURL
+        service.defaults.baseURL = config.baseApi
     }else{
-        service.defaults.baseURL = config.mock ? config.mockApi:config.baseURL
+        service.defaults.baseURL = config.mock ? config.mockApi:config.baseApi
     }
     return service(options)
  }
@@ -70,4 +73,4 @@ service.interceptors.response.use((res)=>{
     }
 })
 
- export default request;
+export default request;
