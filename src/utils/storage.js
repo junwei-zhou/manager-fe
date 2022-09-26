@@ -2,7 +2,7 @@
  * localStorage的封装
  * 后期需要分模块封装
 */
-import config from "./../config"
+import config from "../config"
 export default{
     setItem(key,val){
         let storage = this.getStorage()
